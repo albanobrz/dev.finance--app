@@ -9,6 +9,19 @@ body {
     font-family: "poppins", sans-serif;
 }
 
+/* HEADER ========================================== */
+header {
+    background: #2D4A22;
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+#logo {
+    color: #fff;
+    font-weight: 100;
+}
+
+/* MAIN ========================================== */
 .container {
     width: min(90vw, 800px);  /* vai pegar o menor valor e usar. bom para layout responsivo */
     margin: auto;
@@ -21,24 +34,7 @@ h2 {
     font-weight: 400;
 }
 
-header {
-    background: #2D4A22;
-    padding: 2rem 0 10rem;
-    text-align: center;
-}
-
-#logo {
-    color: #fff;
-    font-weight: 100;
-}
-
-footer {
-    text-align: center;
-    padding: 4rem 0 2rem;
-    color: #363f5f;
-    opacity: 0.6;
-}
-
+/* CARDS ========================================== */
 #balance {
     margin-top: -8rem;
 }
@@ -71,6 +67,7 @@ footer {
     color: white;
 }
 
+/* TABLE ========================================== */
 #data-table {
     width: 100%;
     border-spacing: 0 0.5rem;
@@ -112,4 +109,12 @@ td.income {
 
 td.expense {
     color: #e92929;
+}
+
+/* FOOTER ========================================== */
+footer {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: #363f5f;
+    opacity: 0.6;
 }
