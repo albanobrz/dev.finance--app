@@ -164,7 +164,7 @@ table tr {
     opacity: 0.7;
 }
 
-table tbody tr:hover {
+table tr:hover {
     opacity: 1;
 }
 
