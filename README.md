@@ -2,7 +2,7 @@
 
 Final project from Maratona Discover by Rocketseat
 
-[] finished
 
-* project under construction (Aula 2)
+* not finished
+* project under construction (Aula 3 / half)
 
