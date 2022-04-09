@@ -283,3 +283,35 @@ footer {
         gap: 2rem;
     }
 }
+
+
+/* THEME BUTTON ================================================ */
+header #theme {
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 194, 0);
+    position: absolute;
+    right: 30px;
+}
+
+.dark-theme {
+    background: #1b1b1b;
+    color: white;
+}
+
+.dark-theme-header {
+    background: #1b1b1b;
+}
+
+.button-theme {
+    background: #d9dadb !important;
+}
+
+.card-theme {
+    background: #535663;
+    color: white;
+}
+
+.total-theme {
+    background-color: #2e6619 !important;
+}

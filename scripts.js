@@ -121,8 +121,8 @@ const Utils = {
     },
     formatAmount(value) {
         //tirar virgula e ponto do input do usuario
-        value = Number(value.replace(/\,\./g, '')) * 100
-        return value
+        value = value * 100
+        return Math.round(value)
     },
     formatDate(date) {
         const splittedDate = date.split("-")
@@ -193,6 +193,18 @@ const Form = {
         } catch (error) {
             alert(error.message)
         }
+    }
+}
+
+const Theme = {
+    switch() {
+        document.querySelector('body').classList.toggle('dark-theme')
+        document.querySelector('header').classList.toggle('dark-theme-header')
+        document.querySelector('#theme').classList.toggle('button-theme')
+        document.querySelector(".card").classList.toggle('card-theme')
+        document.querySelector(".card1").classList.toggle('card-theme')
+        document.querySelector("#total1").classList.toggle('total-theme')
+        document.querySelector("footer").classList.toggle('dark-theme')
     }
 }
 
