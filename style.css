@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --color-dark-theme-bg: #1b1b1b;
+    --color-dark-theme-second: #535663;
+    --light-bg: #d9dadb;
 }
 
 body {
@@ -152,7 +155,7 @@ button:hover {
 #data-table {
     width: 100%;
     border-spacing: 0 0.5rem;
-    color: #535663; 
+    color: var(--color-dark-theme-bg); 
 }
 
 table td {
@@ -186,7 +189,7 @@ table tbody tr td:last-child {
 }
 
 td.description {
-    color: #363f5f;
+    color: var(--color-dark-theme-bg);
 }
 
 td.income {
@@ -219,10 +222,11 @@ td.expense {
 }
 
 .modal {
-    background-color: #f0f2f5;
+    background-color: var(--light-bg);
     padding: 2.4rem;
     max-width: 550px;
     width: 95%;
+    border-radius: 10px;
 }
 
 /* FORMS ========================================== */
@@ -267,7 +271,7 @@ input {
 footer {
     text-align: center;
     padding: 4rem 0 2rem;
-    color: #363f5f;
+    color: var(--color-dark-theme-bg);
     opacity: 0.6;
 }
 
@@ -295,7 +299,7 @@ header #theme {
 }
 
 .dark-theme {
-    background: #1b1b1b;
+    background: var(--color-dark-theme-bg);
     color: white;
 }
 
@@ -304,15 +308,15 @@ header #theme {
 }
 
 .dark-theme header {
-    background: #1b1b1b;
+    background: var(--color-dark-theme-bg);
 }
 
 .dark-theme header button {
-    background: #d9dadb !important;  /* depois tirar o important e colocar essa seção no topo para testar */
+    background: var(--color-dark-theme-second) !important;  /* depois tirar o important e colocar essa seção no topo para testar */
 }
 
 .dark-theme main div {
-    background: #535663;
+    background: var(--color-dark-theme-second);
 }
 
 .dark-theme main div:last-child {
@@ -320,27 +324,35 @@ header #theme {
 }
 
 .dark-theme div div {
-    background-color: #1b1b1b;
-    color: #d9dadb;
+    background-color: var(--color-dark-theme-bg);
+    color: white;
 }
 
 .dark-theme div div div h2 {
-    color: #d9dadb;
+    color: var(--light-bg);
 }
 
 .dark-theme input {
     background: #3d3d3d;
-    border: 1px solid #d9dadb;
+    border: 1px solid var(--light-bg);
     border-radius: 5px;
     color: white;
 }
 
 .dark-theme table td {
-    background: rgb(97, 97, 97);
+    background: var(--color-dark-theme-second);
     color: white;
 }
 
 .dark-theme table th {
-    background: rgb(97, 97, 97);
+    background: var(--color-dark-theme-second);
     color: white;
+}
+
+.dark-theme td.income {
+    color: #10df6d; 
+}
+
+.dark-theme td.expense {
+    color: #ff5e5e;
 }
