@@ -19,7 +19,7 @@ const Storage = {
     set(transactions) {
         localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions)) // para transformmar o array em string
     }
-} 
+}
 
 const Transaction = {
     all: Storage.get(),
@@ -126,7 +126,7 @@ const Utils = {
     },
     formatDate(date) {
         const splittedDate = date.split("-")
-        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}` 
+        return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
     }
 }
 
@@ -134,7 +134,7 @@ const Form = {
     description: document.querySelector('#description'),
     amount: document.querySelector('#amount'),
     date: document.querySelector('#date'),
-    
+
 
     getValues() {
         return {
@@ -156,7 +156,7 @@ const Form = {
         let { description, amount, date } = Form.getValues()
         amount = Utils.formatAmount(amount)
         date = Utils.formatDate(date)
-        
+
         return {
             description,
             amount,
@@ -188,7 +188,7 @@ const Form = {
             Form.clearFields()
             // fechar modal
             Modal.close()
-            
+
 
         } catch (error) {
             alert(error.message)
@@ -197,20 +197,22 @@ const Form = {
 }
 
 const Theme = {
+    // coloca no storage a string true ou false, além de trocar a classe
     switch() {
         document.querySelector('body').classList.toggle('dark-theme')
-        document.querySelector('header').classList.toggle('dark-theme-header')
-        document.querySelector('#theme').classList.toggle('button-theme')
-        document.querySelector(".card").classList.toggle('card-theme')
-        document.querySelector(".card1").classList.toggle('card-theme')
-        document.querySelector("#total1").classList.toggle('total-theme')
-        document.querySelector("footer").classList.toggle('dark-theme')
+        darkThemeEnabled = false
+        if (JSON.parse(document.querySelector('body').classList.contains('dark-theme'))) {
+            darkThemeEnabled = true
+        }
+        localStorage.setItem("dark-theme-enabled", darkThemeEnabled)
     }
+
 }
 
 
 const App = {
     init() {
+        darkThemeEnabled = false
 
         // DOM.addTransaction(transactions[0])
         Transaction.all.forEach((transaction, index) => {
@@ -220,6 +222,12 @@ const App = {
         DOM.updateBalance()
 
         Storage.set(Transaction.all)
+
+        // verifica o valor de dark-theme-enabled existente no storage, e adiciona classe
+        if(localStorage.getItem('dark-theme-enabled') === 'true') {   
+            document.body.classList.add('dark-theme')
+        }        
+
     },
     reload() {
         DOM.clearTransactions()
